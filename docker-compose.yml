@@ -1,0 +1,15 @@
+
+version: "3.8"
+
+services:
+  dev-environment:
+    build: .
+    container_name: ubuntu_server
+    volumes:
+      - ./workspace:/workspace
+      - ~/.ssh:/root/.ssh  # Mount your local SSH keys into the container
+    ports:
+      - "8080:80"
+      - "2222:22"  # Expose SSH port
+    stdin_open: true
+    tty: true
