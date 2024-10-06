@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Start the docker-compose service
-docker-compose up -d
+# docker compose up -d
 
 # Enter the running container
-docker exec -it ubuntu_server bash
+docker exec -it ubuntu_server bash -c "cd /root && exec bash"
